@@ -277,6 +277,19 @@ const nav = document.querySelector("nav");
 
 menuToggle.addEventListener("click", () => {
     nav.classList.toggle("active");
+
+    if (nav.classList.contains("active")) {
+        menuToggle.innerHTML = "&times;";
+    } else {
+        menuToggle.innerHTML = "&#9776;";
+    }
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        menuToggle.innerHTML = "&#9776;";
+    });
 });
 </script>
   
