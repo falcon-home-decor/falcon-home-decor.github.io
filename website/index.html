@@ -191,10 +191,17 @@
     }
     .hero-bg {
       position: absolute;
-      inset: -10%;
+      inset: 0;
       background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=85&auto=format') center/cover no-repeat;
       will-change: transform;
-      animation: heroPan 20s ease-in-out infinite alternate;
+      transform: scale(1.04);
+    }
+    
+    @media (min-width: 768px) {
+      .hero-bg {
+        inset: -6%;
+        animation: heroPan 20s ease-in-out infinite alternate;
+      }
     }
     @keyframes heroPan {
       from { transform: scale(1.08) translate(0, 0); }
